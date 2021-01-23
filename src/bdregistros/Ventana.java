@@ -58,8 +58,9 @@ public class Ventana extends JFrame{
         eliminar_boton.setBounds(220, 460, 80, 20);
         
         JButton guardar_edicion_boton = new JButton("Terminar");
-        guardar_edicion_boton.setBounds(320, 460, 80, 20);
+        guardar_edicion_boton.setBounds(120, 460, 80, 20);
         guardar_edicion_boton.setEnabled(false);
+        guardar_edicion_boton.setVisible(false);
         
         JLabel nombre_label = new JLabel("Nombre");
         nombre_label.setBounds(20, 500, 80, 20);
@@ -203,6 +204,8 @@ public class Ventana extends JFrame{
                     si.setEnabled(true);
                     no.setEnabled(true);
                     guardar_edicion_boton.setEnabled(true);
+                    guardar_edicion_boton.setVisible(true);
+                    editar_boton.setVisible(false);
                     
                     insertar_nombre_t.setText(nombre_editar);
                 }
@@ -260,6 +263,8 @@ public class Ventana extends JFrame{
                         roles.setEnabled(false);
                         si.setEnabled(false);
                         no.setEnabled(false);
+                        editar_boton.setVisible(true);
+                        guardar_edicion_boton.setVisible(false);
                     }
                     } catch (SQLException ex) {
                         Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
